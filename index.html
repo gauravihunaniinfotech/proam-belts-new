@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ProAm Belts – Custom Championship Belts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ========== SVG ICON SPRITE ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h10L20 7H6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 10h5l3 3v3h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="18" r="2" fill="currentColor"/><circle cx="17" cy="18" r="2" fill="currentColor"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-5L16 4l4 4L9 19z M14 6l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L16 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2M4 14h3v5H4zM17 14h3v5h-3zM17 19c0 1.5-2 2-5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9.2C1.8 7.6 3.6 5 6.5 5c2 0 3.5 1.1 5.5 3 2-1.9 3.5-3 5.5-3 2.9 0 4.7 2.6 3.5 5.8-2 4.8-9 9.2-9 9.2z" style="fill:var(--f,none)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-diamond" viewBox="0 0 24 24"><path d="M6 4h12l4 6-10 11L2 10z M2 10h20 M9 4l-2 6 5 11 5-11-2-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V3M5 4h13l-2.5 4L18 12H5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========== ANNOUNCEMENT BAR (screenshot 2) ========== -->
+<div class="topbar" role="region" aria-label="Store highlights">
+  <div class="container topbar__inner">
+    <ul class="topbar__list">
+      <li><svg class="ico"><use href="#i-pin"/></svg> LOCATED IN OHIO USA</li>
+      <li><svg class="ico"><use href="#i-box"/></svg> THOUSANDS OF CUSTOM BELTS DELIVERED</li>
+      <li><svg class="ico"><use href="#i-bolt"/></svg> FAST TURNAROUND-PREMIUM QUALITY</li>
+      <li><svg class="ico"><use href="#i-truck"/></svg> FREE SHIPPING ON ORDERS 48 STATES!</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== HEADER (screenshot 1) ========== -->
+<header class="hdr" id="hdr">
+  <div class="container">
+    <div class="hdr__bar">
+      <button class="ibtn burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+
+      <a class="logo" href="index.html" aria-label="ProAm Belts home">
+        <img src="https://proambelts.com/cdn/shop/files/Mask_group_7_333067f5-b985-4275-808a-b04df8acffa7.png?v=1781954298&width=220" alt="ProAm Belts – Custom Championship Belts" width="160" height="48">
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li class="has-dd">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Shop <svg class="ic ic--s"><use href="#i-chev"/></svg></button>
+            <div class="dd">
+              <a href="#">Premier Custom Championship Belts</a>
+              <a href="#">Stock Championship Belts</a>
+              <a href="#">Fantasy Football Belts</a>
+              <a href="#">Plaques &amp; Awards</a>
+              <a href="#">Cases &amp; Accessories</a>
+              <a href="#">Sale Items</a>
+              <a href="#">Belt of the Month</a>
+              <a href="#">Fully Custom VS Custom Stock Belts</a>
+            </div>
+          </li>
+          <li><a href="/pages/custom-championship-belts">Custom Championship Belts</a></li>
+          <li class="has-dd">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Interact <svg class="ic ic--s"><use href="#i-chev"/></svg></button>
+            <div class="dd">
+              <a href="#">Our Process</a>
+              <a href="#">Fantasy Football Belts</a>
+              <a href="#">Videos</a>
+              <a href="#">Updates &amp; Blog</a>
+              <a href="#">Testimonials</a>
+              <a href="#">Our Community</a>
+              <a href="#">Advertise</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Support <svg class="ic ic--s"><use href="#i-chev"/></svg></button>
+            <div class="dd">
+              <a href="#">Wholesale &amp; Bulk Orders</a>
+              <a href="#">Frequently Asked Questions</a>
+              <a href="#">Return Policy</a>
+              <a href="#">Customization Guidelines</a>
+              <a href="#">Contact Us</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="tools">
+        <button class="ibtn" id="searchOpen" aria-label="Search"><svg class="ic"><use href="#i-search"/></svg></button>
+        <a class="ibtn" href="/account" aria-label="Account"><svg class="ic"><use href="#i-user"/></svg></a>
+        <a class="ibtn cart" href="/cart" aria-label="Cart, 0 items"><svg class="ic"><use href="#i-cart"/></svg><span class="cart__n" id="cartCount">0</span></a>
+        <a class="btn btn--sm hide-md" href="/pages/get-a-quote">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu" aria-hidden="true">
+  <div class="drawer__head">
+    <span class="drawer__brand">ProAm Belts</span>
+    <button class="ibtn" id="drawerClose" aria-label="Close menu"><svg class="ic"><use href="#i-close"/></svg></button>
+  </div>
+  <nav>
+    <details><summary>Shop</summary>
+      <a href="/collections/premier-title-belts">Premier Title Belts</a>
+      <a href="/collections/custom-belts">Custom Belts</a>
+      <a href="/collections/fantasy-belts">Fantasy Belts</a>
+      <a href="/collections/boxing-belts">Boxing Belts</a>
+      <a href="/collections/awards-plaques">Awards &amp; Plaques</a>
+      <a href="/collections/sale">Sale</a>
+    </details>
+    <a href="/pages/custom-championship-belts">Custom Championship Belts</a>
+    <details><summary>About Us</summary>
+      <a href="/pages/about-us">Our Story</a>
+      <a href="/pages/our-process">Our Process</a>
+      <a href="/pages/gallery">Gallery</a>
+      <a href="/blogs/news">Blog</a>
+    </details>
+    <a href="/pages/contact">Contact</a>
+    <a href="/pages/wishlist">Wishlist</a>
+  </nav>
+  <a class="btn btn--block" href="/pages/get-a-quote">Get a Quote</a>
+</aside>
+
+<!-- Search overlay -->
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="container search__in">
+    <form action="/search" method="get" role="search">
+      <label class="sr" for="q">Search the store</label>
+      <input id="q" name="q" type="search" placeholder="Search belts, plaques…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
+    <button class="ibtn search__x" id="searchClose" aria-label="Close search"><svg class="ic"><use href="#i-close"/></svg></button>
+  </div>
+</div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="heroTitle">
+    <span class="hero__slash" aria-hidden="true"></span>
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="kicker">Custom Championship Belts</p>
+        <h1 id="heroTitle" class="hero__title">
+          <span class="l1">Design.</span>
+          <span class="l2">Customize.</span>
+          <span class="l3">Become a <b>Champion.</b></span>
+        </h1>
+        <p class="hero__lead">Premium quality. Unmatched craftsmanship. A belt that represents your legacy.</p>
+        <div class="cta">
+          <a class="btn btn--lg" href="/collections/premier-title-belts">Shop Championship Belts <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--lg btn--ghost" href="/pages/design-your-own"><svg class="ic"><use href="#i-pen"/></svg> Design Your Own Belt</a>
+        </div>
+        <ul class="hero__trust">
+          <li><svg class="ic"><use href="#i-shield"/></svg><span><b>Satisfaction Guarantee</b>Love it or we make it right</span></li>
+          <li><svg class="ic"><use href="#i-eye"/></svg><span><b>Free Design Preview</b>See it before we build it</span></li>
+          <li><svg class="ic"><use href="#i-headset"/></svg><span><b>Expert Support</b>Always here for you</span></li>
+          <li><svg class="ic"><use href="#i-lock"/></svg><span><b>Secure Checkout</b>100% safe &amp; encrypted</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__stage">
+        <div class="hero__frame ph" data-label="hero-bg.jpg">
+          <img src="assets/images/Medusa_Belt_Victory_Celebration_1_1.webp" alt="Champion celebrating with a custom Medusa championship belt" fetchpriority="high">
+        </div>
+        <svg class="hero__badge" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+          <circle cx="60" cy="60" r="58" class="b-bg"/>
+          <text class="b-txt"><textPath href="#circ" startOffset="0">Fully custom • Fast turnaround • Premium quality •</textPath></text>
+          <g class="b-ic"><path d="M40 78h40l-4-26-12 12-4-18-4 18-12-12-4 26z"/></g>
+        </svg>
+        <div class="hero__ship">
+          <span class="hero__ship-ic"><svg class="ic"><use href="#i-truck"/></svg></span>
+          <div class="hero__ship-txt">
+            <em>Free shipping</em>
+            <b>On all U.S. orders</b>
+            <small>Free UPS Ground on eligible orders in the lower 48 states.</small>
+          </div>
+          <span class="hero__ship-tag">Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 02 STATS ============ -->
+  <section class="stats" id="stats" aria-label="Brand statistics">
+    <!-- <div class="stats__ticker" aria-hidden="true">
+      <div class="stats__track">
+        <span>Free Shipping On Orders 48 States</span><i>✦</i><span>Satisfaction Guarantee</span><i>✦</i><span>Free Design Preview</span><i>✦</i><span>Expert Support</span><i>✦</i><span>Secure Checkout</span><i>✦</i>
+        <span>Free Shipping On Orders 48 States</span><i>✦</i><span>Satisfaction Guarantee</span><i>✦</i><span>Free Design Preview</span><i>✦</i><span>Expert Support</span><i>✦</i><span>Secure Checkout</span><i>✦</i>
+      </div>
+    </div> -->
+
+    <div class="container stats__grid">
+      <div class="stat reveal">
+        <div class="stat__num"><span data-count="15">15</span>+</div>
+        <div class="stat__label">Years Experience</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat__num">1,000<span>+</span></div>
+        <div class="stat__label">Thousands of custom belts delivered</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat__num"><span data-count="4.9" data-decimals="1">4.9</span><small>/5</small></div>
+        <div class="stat__label">★★★★★ from 1,000+ happy champions</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat__num"><span data-count="7">7</span>–<span data-count="10">10</span></div>
+        <div class="stat__label">Days — as fast as production gets</div>
+      </div>
+    </div>
+
+    <div class="container trust">
+      <div class="trust__item reveal"><svg class="ico"><use href="#i-truck"/></svg><div><strong>Free Shipping On Orders 48 States!</strong><span>Enjoy free UPS Ground shipping on eligible orders within the lower 48 United States!</span></div></div>
+      <div class="trust__item reveal"><svg class="ico"><use href="#i-check"/></svg><div><strong>Satisfaction Guarantee</strong><span>Love it or we make it right</span></div></div>
+      <div class="trust__item reveal"><svg class="ico"><use href="#i-eye"/></svg><div><strong>Free Design Preview</strong><span>See your belt before we build it</span></div></div>
+      <div class="trust__item reveal"><svg class="ico"><use href="#i-headset"/></svg><div><strong>Expert Support</strong><span>Always here for you</span></div></div>
+      <div class="trust__item reveal"><svg class="ico"><use href="#i-lock"/></svg><div><strong>Secure Checkout</strong><span>100% safe &amp; encrypted</span></div></div>
+    </div>
+  </section>
+
+
+  <!-- ============ 03 CATEGORIES – expanding panels ============ -->
+  <section class="sec cats" id="collections" aria-labelledby="catTitle">
+    <div class="container">
+      <header class="sec__head cats__head">
+        <div class="cats__heading">
+          <p class="kicker">Explore Our Collection</p>
+          <h2 id="catTitle" class="h2">Championship Belts for <span class="g">Every Achievement</span></h2>
+        </div>
+        <div class="cats__description">
+          <p class="sec__sub">From fantasy leagues to professional promotions, our premium custom belts are built to honor winners and create lasting legacies.</p>
+        </div>
+      </header>
+
+      <div class="panels" id="panels">
+        <a class="panel is-active" style="--tint:#3a050a;--fx:.76" href="/collections/premier-title-belts">
+          <div class="panel__img ph" data-label="Frame_2147227443.webp"><img src="https://proambelts.com/cdn/shop/files/Frame_2147227443.webp?v=1782716987" alt="" loading="lazy"></div>
+          <span class="panel__no" aria-hidden="true">01</span>
+          <span class="panel__vt" aria-hidden="true">Premier</span>
+          <div class="panel__txt"><small>Premier</small><h3>Fully Custom</h3><p>Championship title belt</p><span class="btn btn--sm">Shop Now <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="panel" style="--tint:#0a1f48;--fx:.70" href="/collections/custom-belts">
+          <div class="panel__img ph" data-label="Frame_2147227444_1.webp"><img src="https://proambelts.com/cdn/shop/files/Frame_2147227444_1.webp?v=1782716987" alt="" loading="lazy"></div>
+          <span class="panel__no" aria-hidden="true">02</span>
+          <span class="panel__vt" aria-hidden="true">Custom</span>
+          <div class="panel__txt"><small>Custom</small><h3>Stock</h3><p>Championship title belt</p><span class="btn btn--sm">Shop Now <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="panel" style="--tint:#0d3406;--fx:.75" href="/collections/fantasy-belts">
+          <div class="panel__img ph" data-label="Frame_2147227439.webp"><img src="https://proambelts.com/cdn/shop/files/Frame_2147227439_8d16a2da-37ab-4cb0-8821-e5362b45f18c.webp?v=1782717048" alt="" loading="lazy"></div>
+          <span class="panel__no" aria-hidden="true">03</span>
+          <span class="panel__vt" aria-hidden="true">Fantasy</span>
+          <div class="panel__txt"><small>Fantasy</small><h3>Football</h3><p>Championship title belt</p><span class="btn btn--sm">Shop Now <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="panel" style="--tint:#3a050a;--fx:.67" href="/collections/sale">
+          <div class="panel__img ph" data-label="Frame_2147227440.webp"><img src="https://proambelts.com/cdn/shop/files/Frame_2147227440.webp?v=1782716987" alt="" loading="lazy"></div>
+          <span class="panel__no" aria-hidden="true">04</span>
+          <span class="panel__vt" aria-hidden="true">Sale</span>
+          <div class="panel__txt"><small>Sale</small><h3>Items</h3><p>Perfect for tournaments &amp; leagues</p><span class="btn btn--sm">Shop Now <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="panel" style="--tint:#303030;--fx:.69" href="/collections/awards-plaques">
+          <div class="panel__img ph" data-label="Frame_2147227441.webp"><img src="https://proambelts.com/cdn/shop/files/Frame_2147227441.webp?v=1782716987" alt="" loading="lazy"></div>
+          <span class="panel__no" aria-hidden="true">05</span>
+          <span class="panel__vt" aria-hidden="true">Awards</span>
+          <div class="panel__txt"><small>Awards</small><h3>Plaques</h3><p>Create a one of a kind belt designed by you.</p><span class="btn btn--sm">Shop Now <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+        <a class="panel" style="--tint:#0d3406;--fx:.68" href="/pages/wholesale">
+          <div class="panel__img ph" data-label="Frame_2147227442.webp"><img src="https://proambelts.com/cdn/shop/files/Frame_2147227442.webp?v=1782716987" alt="" loading="lazy"></div>
+          <span class="panel__no" aria-hidden="true">06</span>
+          <span class="panel__vt" aria-hidden="true">Bulk</span>
+          <div class="panel__txt"><small>Bulk</small><h3>Wholesale</h3><p>Championship title belt</p><span class="btn btn--sm">Shop Now <svg class="ic"><use href="#i-arrow"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ 04 SHOP (CAROUSEL) ============ -->
+  <section class="sec shop" id="shop" aria-labelledby="shopTitle">
+    <div class="container">
+      <header class="sec__head shop__head reveal">
+        <div>
+          <p class="kicker">Best Sellers</p>
+          <h2 id="shopTitle" class="h2">Premium Championship <span class="g">Belts</span></h2>
+        </div>
+        <div class="shop__tools">
+          <div class="chips" role="group" aria-label="Filter products">
+            <button type="button" class="chip is-on" data-f="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-f="boxing" aria-pressed="false">Boxing</button>
+            <button type="button" class="chip" data-f="fantasy" aria-pressed="false">Fantasy</button>
+            <button type="button" class="chip" data-f="corporate" aria-pressed="false">Corporate</button>
+          </div>
+          <div class="arrows">
+            <button type="button" class="arrow" id="shopPrev" aria-label="Previous"><svg class="ic"><use href="#i-left"/></svg></button>
+            <button type="button" class="arrow" id="shopNext" aria-label="Next"><svg class="ic"><use href="#i-right"/></svg></button>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-track" id="shopTrack">
+        <article class="p-card" data-tags="boxing" data-id="crimson" data-name="Victory Red Custom Gold Champion Belt" data-price="184.00">
+          <div class="p-img ph" data-label="Victory Red Custom Gold Champion Belt">
+            <img src="https://proambelts.com/cdn/shop/files/1b9b3cdecd10b251b0f0f8721ae35d8d4e03a9be_1.webp?v=1789973322" alt="Victory Red Custom Gold Champion Belt" loading="lazy">
+            <span class="badge">Best seller</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 4.9 <small>(312)</small></div>
+            <h3>Victory Red Custom Gold Champion Belt</h3><p>Red leather, gold plates</p>
+            <div class="p-foot"><b>$184.00</b><button type="button" class="add-btn" aria-label="Add Victory Red Custom Gold Champion Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="boxing" data-id="rose" data-name="Prophet Pink Custom Chrome Champion Belt" data-price="184.00">
+          <div class="p-img ph" data-label="Prophet Pink Custom Chrome Champion Belt">
+            <img src="https://proambelts.com/cdn/shop/files/b652a90c77e4bb6a3b5073be4165c6ca5f0555a5_1.webp?v=1789973509" alt="Rose Silver TitleProphet Pink Custom Chrome Champion Belt belt" loading="lazy">
+            <span class="badge badge--new">New</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 4.8 <small>(96)</small></div>
+            <h3>Prophet Pink Custom Chrome Champion Belt</h3><p>Pink leather, silver filigree</p>
+            <div class="p-foot"><b>$184.00</b><button type="button" class="add-btn" aria-label="Add Prophet Pink Custom Chrome Champion Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="boxing corporate" data-id="arctic" data-name="Global Domination Custom White Championship Belt" data-price="194.99">
+          <div class="p-img ph" data-label="Global Domination Custom White Championship Belt">
+            <img src="https://proambelts.com/cdn/shop/files/7a81b7d3336f621ae2b4a9ebaa6527785c631c7f_1.webp?v=1789973783" alt="Global Domination Custom White Championship belt" loading="lazy">
+            <span class="badge">Top rated</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 5.0 <small>(188)</small></div>
+            <h3>Global Domination Custom White Championship Belt</h3><p>White leather, gold globe</p>
+            <div class="p-foot"><b>$194.99</b><button type="button" class="add-btn" aria-label="Add Global Domination Custom White Championship Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="fantasy" data-id="gridiron" data-name="Hercules Heavyweight Championship Belt" data-price="214.99">
+          <div class="p-img ph" data-label="Hercules Heavyweight Championship Belt">
+            <img src="https://proambelts.com/cdn/shop/files/Group_731_1.webp?v=1789974085" alt="Hercules Heavyweight Championship Belt fantasy belt" loading="lazy">
+            <span class="badge">League fave</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 4.9 <small>(264)</small></div>
+            <h3>Hercules Heavyweight Championship Belt</h3><p>Black strap, engraved player</p>
+            <div class="p-foot"><b>$214.99</b><button type="button" class="add-btn" aria-label="Add GrHercules Heavyweight Championship Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="boxing" data-id="obsidian" data-name="Global Domination Custom Black Championship Award Trophy Belt" data-price="179.99">
+          <div class="p-img ph" data-label="Global Domination Custom Black Championship Award Trophy Belt">
+            <img src="https://proambelts.com/cdn/shop/files/Group_728_1.webp?v=1789973820" alt="Global Domination Custom Black Championship Award Trophy Belt" loading="lazy">
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 5.0 <small>(71)</small></div>
+            <h3>Global Domination Custom Black Championship Award Trophy Belt</h3><p>Custom names & logos</p>
+            <div class="p-foot"><b>$179.99</b><button type="button" class="add-btn" aria-label="Add Global Domination Custom Black Championship Award Trophy Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="corporate" data-id="podium" data-name="Victory RWB Custom Gold Championship Award Trophy Belt" data-price="179.99">
+          <div class="p-img ph" data-label="Victory RWB Custom Gold Championship Award Trophy Belt">
+            <img src="https://proambelts.com/cdn/shop/files/05a1ac20c8db057e86da86ba675e6adc240840bf_1.webp?v=1789973388" alt="Victory RWB Custom Gold Championship Award Trophy Belt" loading="lazy">
+            <span class="badge badge--new">Bundle</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 4.9 <small>(54)</small></div>
+            <h3>Victory RWB Custom Gold Championship Award Trophy Belt</h3><p>Custom names & logos</p>
+            <div class="p-foot"><b>$179.99</b><button type="button" class="add-btn" aria-label="Add Victory RWB Custom Gold Championship Award Trophy Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="corporate" data-id="podium" data-name="Victory Blue Custom Gold Championship Award Trophy Belt" data-price="179.99">
+          <div class="p-img ph" data-label="Victory Blue Custom Gold Championship Award Trophy Belt">
+            <img src="https://proambelts.com/cdn/shop/files/2e77404c5ff6237cde12acb7986b0b4b7ccf4826_1.webp?v=1789973357" alt="Victory Blue Custom Gold Championship Award Trophy Belt" loading="lazy">
+            <span class="badge badge">Best Seller</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 4.9 <small>(54)</small></div>
+            <h3>Victory Blue Custom Gold Championship Award Trophy Belt</h3><p>Custom names & logos</p>
+            <div class="p-foot"><b>$179.99</b><button type="button" class="add-btn" aria-label="Add Victory Blue Custom Gold Championship Award Trophy Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+
+        <article class="p-card" data-tags="corporate" data-id="podium" data-name="Titan Championship Belt" data-price="214.99">
+          <div class="p-img ph" data-label="Titan Championship Belt">
+            <img src="https://proambelts.com/cdn/shop/files/Group_734_1.webp?v=1789974189" alt="Titan Championship Belt" loading="lazy">
+            <span class="badge badge--new">New</span>
+            <button type="button" class="heart" aria-label="Save to wishlist" aria-pressed="false"><svg class="ic"><use href="#i-heart"/></svg></button>
+          </div>
+          <div class="p-body">
+            <div class="p-rate"><svg class="ic"><use href="#i-star"/></svg> 4.9 <small>(54)</small></div>
+            <h3>Titan Championship Belt</h3><p>Custom names & logos</p>
+            <div class="p-foot"><b>$214.99</b><button type="button" class="add-btn" aria-label="Add Titan Championship Belt to cart"><svg class="ic"><use href="#i-plus"/></svg> <span>Add</span></button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 05 WHY PROAM (about) ============ -->
+  <section class="sec why" id="about" aria-labelledby="whyTitle">
+    <div class="container why__grid">
+
+      <!-- left: image + years badge -->
+      <div class="why__visual reveal">
+        <figure class="why__main ph" data-label="chilli_cook_off_belt.webp">
+          <img src="https://proambelts.com/cdn/shop/files/chilli_cook_off_belt.jpg?v=1785923381" alt="Champions presenting custom ProAm belts" loading="lazy">
+          <figcaption class="why__years"><b>15<sup>+</sup></b><span>Years<br>Experience</span></figcaption>
+        </figure>
+      </div>
+
+      <!-- right: copy + benefit cards -->
+      <div class="why__copy">
+        <p class="kicker reveal">Why ProAm Belts</p>
+        <h2 id="whyTitle" class="h2 reveal">Built by Craftsmen. <span class="g">Chosen by Champions.</span></h2>
+        <p class="why__lead reveal">For over 15+ years, ProAmBelts has helped leagues, teams, organizations, and businesses create unforgettable championship moments with premium custom belts built to last.</p>
+
+        <div class="benefits">
+          <article class="benefit reveal"><span class="benefit__ico"><svg class="ic"><use href="#i-diamond"/></svg></span><div><h3>Premium Craftsmanship</h3><p>Top-grade materials engineered for durability and long-lasting quality.</p></div></article>
+          <article class="benefit reveal"><span class="benefit__ico"><svg class="ic"><use href="#i-pen"/></svg></span><div><h3>Fully Custom Designs</h3><p>Your logo, branding, and vision brought to life with unlimited customization.</p></div></article>
+          <article class="benefit reveal"><span class="benefit__ico"><svg class="ic"><use href="#i-truck"/></svg></span><div><h3>Fast Turnaround</h3><p>Production completed in as little as 7–10 days from approval.</p></div></article>
+          <article class="benefit reveal"><span class="benefit__ico"><svg class="ic"><use href="#i-flag"/></svg></span><div><h3>Located in the USA</h3><p>Proudly designed and assembled in the USA with unmatched quality.</p></div></article>
+          <article class="benefit reveal"><span class="benefit__ico"><svg class="ic"><use href="#i-globe"/></svg></span><div><h3>Trusted Worldwide</h3><p>Thousands of leagues, teams, and organizations trust ProAm Belts.</p></div></article>
+          <article class="benefit reveal"><span class="benefit__ico"><svg class="ic"><use href="#i-check"/></svg></span><div><h3>Satisfaction Guaranteed</h3><p>Backed by our quality assurance and dedicated customer support.</p></div></article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
